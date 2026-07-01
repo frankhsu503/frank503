@@ -17,13 +17,14 @@
       theme: {
         extend: {
           colors: {
-            ink: '#060606',
-            carbon: '#10100f',
-            champagne: '#E8D7A4',
-            gold: '#D4AF37',
-            bronze: '#8F6B23',
-            mist: '#E9E1D0',
-            muted: '#9A9283'
+            ink: '#121212',
+            carbon: '#181715',
+            champagne: '#E5D3A3',
+            gold: '#B59410',
+            bronze: '#725B13',
+            ruby: '#8B0000',
+            mist: '#E5D3A3',
+            muted: '#A99D82'
           },
           fontFamily: {
             sans: ['Noto Sans TC', 'sans-serif'],
@@ -31,7 +32,7 @@
             cinzel: ['Cinzel', 'serif']
           },
           boxShadow: {
-            glow: '0 0 70px rgba(212,175,55,.16)',
+            glow: '0 0 70px rgba(181,148,16,.24)',
             soft: '0 30px 90px rgba(0,0,0,.55)'
           }
         }
@@ -40,23 +41,35 @@
   </script>
 
   <style>
-    html, body { margin: 0; background:#060606; color:#E9E1D0; overflow-x:hidden; }
+    html, body { margin: 0; background:#121212; color:#E5D3A3; overflow-x:hidden; }
     body::before {
       content:""; position:fixed; inset:0; z-index:1; pointer-events:none;
       background:
-        radial-gradient(circle at 20% 10%, rgba(212,175,55,.15), transparent 26%),
-        radial-gradient(circle at 90% 35%, rgba(232,215,164,.08), transparent 28%),
+        radial-gradient(circle at 20% 10%, rgba(181,148,16,.16), transparent 26%),
+        radial-gradient(circle at 90% 35%, rgba(229,211,163,.08), transparent 28%),
         linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.80));
     }
     #bg-canvas { position:fixed; inset:0; width:100vw; height:100vh; z-index:0; pointer-events:none; }
     #content-wrapper { position:relative; z-index:10; }
-    .gold-text { background:linear-gradient(120deg,#FFF1BD 0%,#D4AF37 42%,#8F6B23 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-    .glass { background:linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025)); border:1px solid rgba(232,215,164,.16); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); box-shadow:0 30px 90px rgba(0,0,0,.45); }
-    .glass:hover { border-color:rgba(212,175,55,.45); transform:translateY(-6px); }
-    .hairline { height:1px; background:linear-gradient(90deg, transparent, rgba(212,175,55,.55), transparent); }
-    .luxe-input { width:100%; background:rgba(255,255,255,.035); border:1px solid rgba(232,215,164,.14); border-radius:18px; padding:16px 18px; outline:none; color:#fff; transition:.35s; }
-    .luxe-input:focus { border-color:rgba(212,175,55,.7); box-shadow:0 0 0 4px rgba(212,175,55,.10); background:rgba(255,255,255,.055); }
-    .luxe-input::placeholder { color:rgba(233,225,208,.38); letter-spacing:.12em; font-size:.86rem; }
+    .gold-text { background:linear-gradient(120deg,#E5D3A3 0%,#B59410 48%,#725B13 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .glass { background:linear-gradient(145deg, rgba(229,211,163,.065), rgba(18,18,18,.36)); border:1px solid rgba(229,211,163,.16); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); box-shadow:0 30px 90px rgba(0,0,0,.45); }
+    .glass:hover { border-color:rgba(181,148,16,.52); transform:translateY(-6px); }
+    .hairline { height:1px; background:linear-gradient(90deg, transparent, rgba(229,211,163,.58), transparent); }
+    .luxe-input { width:100%; background:rgba(229,211,163,.035); border:1px solid rgba(229,211,163,.16); border-radius:18px; padding:16px 18px; outline:none; color:#E5D3A3; transition:.35s; }
+    .luxe-input:focus { border-color:rgba(181,148,16,.78); box-shadow:0 0 0 4px rgba(181,148,16,.12); background:rgba(229,211,163,.055); }
+    .luxe-input::placeholder { color:rgba(229,211,163,.38); letter-spacing:.12em; font-size:.86rem; }
+    .hero-video { position:absolute; inset:0; overflow:hidden; background:#121212; }
+    .hero-video iframe {
+      position:absolute; top:50%; left:50%; width:100vw; height:56.25vw;
+      min-width:177.78vh; min-height:100vh; transform:translate(-50%,-50%);
+      pointer-events:none; border:0;
+    }
+    .hero-video::after {
+      content:""; position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(18,18,18,.48) 0%, rgba(18,18,18,.24) 42%, rgba(18,18,18,.9) 100%),
+        radial-gradient(circle at center, transparent 18%, rgba(18,18,18,.38) 100%);
+    }
     select.luxe-input { appearance:none; }
     .reveal { opacity:0; transform:translateY(28px); transition:opacity .9s ease, transform .9s ease; }
     .reveal.show { opacity:1; transform:translateY(0); }
@@ -80,13 +93,22 @@
           <a href="#about" class="hover:text-gold transition">關於</a>
           <a href="#services" class="hover:text-gold transition">服務</a>
           <a href="#space" class="hover:text-gold transition">Sanctuary</a>
-          <a href="#membership" class="px-7 py-3 rounded-full border border-gold/50 text-gold hover:bg-gold hover:text-ink transition">VIP Access</a>
+          <a href="#membership" class="px-7 py-3 rounded-full border border-ruby/70 text-champagne hover:bg-ruby hover:text-champagne transition">VIP Access</a>
         </div>
       </div>
     </nav>
 
-    <header class="min-h-screen flex items-center justify-center px-5 relative">
-      <div class="max-w-5xl mx-auto text-center pt-24 reveal show">
+    <header class="min-h-screen flex items-center justify-center px-5 relative overflow-hidden">
+      <div class="hero-video" aria-hidden="true">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/B3QuuFNsC-w?autoplay=1&mute=1&controls=0&loop=1&playlist=B3QuuFNsC-w,EkVhpXLAPag&playsinline=1&rel=0&disablekb=1&fs=0&iv_load_policy=3"
+          title="沉澱 SPA 品牌形象背景影片"
+          allow="autoplay; encrypted-media"
+          referrerpolicy="strict-origin-when-cross-origin"
+          tabindex="-1"
+        ></iframe>
+      </div>
+      <div class="max-w-5xl mx-auto text-center pt-24 reveal show relative z-10">
         <div class="inline-flex items-center gap-4 mb-9 text-gold/90 text-[11px] font-cinzel tracking-[.55em] uppercase">
           <span class="w-12 hairline"></span> Private Wellness Club <span class="w-12 hairline"></span>
         </div>
@@ -95,7 +117,7 @@
           為高壓生活中的企業主與高資產客戶打造的靜謐場域。<br class="hidden sm:block">把時間放慢，把疲憊留下，把真正的自己帶走。
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#membership" class="w-full sm:w-auto px-10 py-4 rounded-full bg-gold text-ink font-cinzel text-xs tracking-[.32em] hover:bg-champagne transition shadow-glow">Reserve</a>
+          <a href="#membership" class="w-full sm:w-auto px-10 py-4 rounded-full bg-ruby text-champagne font-cinzel text-xs tracking-[.32em] hover:bg-[#A50000] transition shadow-glow">Reserve</a>
           <a href="#services" class="w-full sm:w-auto px-10 py-4 rounded-full border border-mist/20 text-mist/85 font-cinzel text-xs tracking-[.32em] hover:border-gold hover:text-gold transition">探索專屬服務</a>
         </div>
       </div>
@@ -206,6 +228,52 @@
       </div>
     </section>
 
+    <section id="vip-visual" class="pb-24 px-5">
+      <div class="max-w-5xl mx-auto reveal">
+        <div class="relative overflow-hidden rounded-[2rem] border border-gold/25 bg-carbon shadow-soft group">
+          <img
+            src="vip-spa-brand-visual.png"
+            alt="沉澱 SPA 頂級芳療、專屬空間與尊榮款待品牌形象"
+            class="block w-full h-auto transition duration-1000 group-hover:scale-[1.015]"
+            loading="lazy"
+          >
+          <div class="absolute inset-0 pointer-events-none ring-1 ring-inset ring-champagne/10 rounded-[2rem]"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="socials" class="pb-8 px-5">
+      <div class="max-w-4xl mx-auto reveal">
+        <div class="flex items-center justify-between gap-5 mb-7">
+          <div>
+            <p class="font-cinzel text-gold text-[10px] tracking-[.5em] uppercase mb-3">Dependencies</p>
+            <h2 class="font-serif text-xl md:text-2xl tracking-[.16em] text-white">與沉澱保持連結</h2>
+          </div>
+          <span class="hidden sm:block text-[10px] tracking-[.25em] text-muted/60 uppercase">Coming Soon</span>
+        </div>
+        <div class="glass rounded-[1.5rem] p-3 sm:p-4 transition duration-500">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div class="flex items-center gap-3 rounded-xl px-4 py-4 border border-white/5 bg-white/[.025] text-mist/55 cursor-default" aria-label="LINE 社群連結預留">
+              <i class="ph ph-line-logo text-2xl text-gold"></i>
+              <div><span class="block text-xs tracking-wider text-mist/80">LINE</span><span class="text-[9px] tracking-[.18em] text-muted/50">待啟用</span></div>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl px-4 py-4 border border-white/5 bg-white/[.025] text-mist/55 cursor-default" aria-label="Facebook 社群連結預留">
+              <i class="ph ph-facebook-logo text-2xl text-gold"></i>
+              <div><span class="block text-xs tracking-wider text-mist/80">Facebook</span><span class="text-[9px] tracking-[.18em] text-muted/50">待啟用</span></div>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl px-4 py-4 border border-white/5 bg-white/[.025] text-mist/55 cursor-default" aria-label="LinkedIn 社群連結預留">
+              <i class="ph ph-linkedin-logo text-2xl text-gold"></i>
+              <div><span class="block text-xs tracking-wider text-mist/80">LinkedIn</span><span class="text-[9px] tracking-[.18em] text-muted/50">待啟用</span></div>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl px-4 py-4 border border-white/5 bg-white/[.025] text-mist/55 cursor-default" aria-label="GitHub 社群連結預留">
+              <i class="ph ph-github-logo text-2xl text-white/75"></i>
+              <div><span class="block text-xs tracking-wider text-mist/80">GitHub</span><span class="text-[9px] tracking-[.18em] text-muted/50">待啟用</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="membership" class="py-28 px-5">
       <div class="max-w-4xl mx-auto glass rounded-[2.5rem] p-7 sm:p-10 lg:p-14 relative overflow-hidden reveal">
         <div class="absolute -top-24 -right-24 w-72 h-72 bg-gold/10 rounded-full blur-3xl"></div>
@@ -230,7 +298,7 @@
             </select>
             <i class="ph-thin ph-caret-down absolute right-5 top-1/2 -translate-y-1/2 text-gold text-xl pointer-events-none"></i>
           </div>
-          <button id="submitBtn" class="sm:col-span-2 mt-4 py-4 rounded-full bg-gold text-ink font-cinzel text-xs tracking-[.34em] hover:bg-champagne transition">Submit Request</button>
+          <button id="submitBtn" class="sm:col-span-2 mt-4 py-4 rounded-full bg-ruby text-champagne font-cinzel text-xs tracking-[.34em] hover:bg-[#A50000] transition shadow-glow">Submit Request</button>
         </form>
 
         <div id="successMsg" class="hidden absolute inset-0 bg-ink/95 backdrop-blur-xl z-20 items-center justify-center text-center p-8">
@@ -292,14 +360,14 @@
     function resizeCanvas(){ width = canvas.width = innerWidth; height = canvas.height = innerHeight; }
     addEventListener('resize', resizeCanvas); resizeCanvas();
     function draw(){
-      ctx.fillStyle = 'rgba(6,6,6,.28)'; ctx.fillRect(0,0,width,height); time += .0035;
+      ctx.fillStyle = 'rgba(18,18,18,.28)'; ctx.fillRect(0,0,width,height); time += .0035;
       for(let j=0;j<18;j++){
         ctx.beginPath(); ctx.lineWidth = 1 + j * .035;
         const grad = ctx.createLinearGradient(0,0,width,0);
-        grad.addColorStop(0,'rgba(212,175,55,0)');
-        grad.addColorStop(.38,`rgba(232,215,164,${.10 + j*.004})`);
-        grad.addColorStop(.58,`rgba(212,175,55,${.22 - j*.007})`);
-        grad.addColorStop(1,'rgba(212,175,55,0)');
+        grad.addColorStop(0,'rgba(181,148,16,0)');
+        grad.addColorStop(.38,`rgba(229,211,163,${.10 + j*.004})`);
+        grad.addColorStop(.58,`rgba(181,148,16,${.22 - j*.007})`);
+        grad.addColorStop(1,'rgba(181,148,16,0)');
         ctx.strokeStyle = grad;
         const baseY = height*.48 + j*17 - 150;
         ctx.moveTo(0,baseY);
