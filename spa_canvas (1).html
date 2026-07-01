@@ -62,7 +62,7 @@
     .hero-video iframe {
       position:absolute; top:50%; left:50%; width:100vw; height:56.25vw;
       min-width:177.78vh; min-height:100vh; transform:translate(-50%,-50%);
-      pointer-events:none; border:0;
+      pointer-events:none; border:0; opacity:1;
     }
     .hero-video::after {
       content:""; position:absolute; inset:0;
@@ -101,8 +101,8 @@
     <header class="min-h-screen flex items-center justify-center px-5 relative overflow-hidden">
       <div class="hero-video" aria-hidden="true">
         <iframe
-          src="https://www.youtube-nocookie.com/embed/B3QuuFNsC-w?autoplay=1&mute=1&controls=0&loop=1&playlist=B3QuuFNsC-w,EkVhpXLAPag&playsinline=1&rel=0&disablekb=1&fs=0&iv_load_policy=3"
-          title="沉澱 SPA 品牌形象背景影片"
+          src="https://www.youtube-nocookie.com/embed/B3QuuFNsC-w?autoplay=1&mute=1&controls=0&loop=1&playlist=B3QuuFNsC-w&playsinline=1&rel=0&disablekb=1&fs=0&iv_load_policy=3"
+          title="沉澱 SPA 品牌形象背景影片一"
           allow="autoplay; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin"
           tabindex="-1"
@@ -117,11 +117,29 @@
           為高壓生活中的企業主與高資產客戶打造的靜謐場域。<br class="hidden sm:block">把時間放慢，把疲憊留下，把真正的自己帶走。
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#membership" class="w-full sm:w-auto px-10 py-4 rounded-full bg-ruby text-champagne font-cinzel text-xs tracking-[.32em] hover:bg-[#A50000] transition shadow-glow">Reserve</a>
+          <a href="https://calendar.app.google/gShiwCfxxUSw3mun7" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-10 py-4 rounded-full bg-ruby text-champagne font-cinzel text-xs tracking-[.32em] hover:bg-[#A50000] transition shadow-glow">Reserve</a>
           <a href="#services" class="w-full sm:w-auto px-10 py-4 rounded-full border border-mist/20 text-mist/85 font-cinzel text-xs tracking-[.32em] hover:border-gold hover:text-gold transition">探索專屬服務</a>
         </div>
       </div>
     </header>
+
+    <section id="brand-film" class="min-h-screen flex items-center justify-center px-5 relative overflow-hidden">
+      <div class="hero-video" aria-hidden="true">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/EkVhpXLAPag?autoplay=1&mute=1&controls=0&loop=1&playlist=EkVhpXLAPag&playsinline=1&rel=0&disablekb=1&fs=0&iv_load_policy=3"
+          title="沉澱 SPA 品牌形象背景影片二"
+          allow="autoplay; encrypted-media"
+          referrerpolicy="strict-origin-when-cross-origin"
+          tabindex="-1"
+        ></iframe>
+      </div>
+      <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
+        <p class="font-cinzel text-gold text-[11px] tracking-[.55em] uppercase mb-8">A Private Ritual</p>
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-7xl leading-[1.3] tracking-[.16em] text-champagne mb-8">讓世界暫停<br>只留下此刻</h2>
+        <div class="w-28 hairline mx-auto mb-8"></div>
+        <p class="text-mist/75 text-sm sm:text-base tracking-[.18em] leading-loose">專屬空間・頂級芳療・零打擾的深度沉澱</p>
+      </div>
+    </section>
 
     <section id="about" class="py-28 px-5">
       <div class="max-w-7xl mx-auto">
@@ -186,7 +204,7 @@
               <p class="text-muted leading-loose text-sm tracking-wider mb-7">針對肩頸僵硬、久坐疲勞與深層筋膜壓力，透過穩定而連續的節奏釋放身體卡點。</p>
               <div class="flex items-center justify-between border-t border-gold/15 pt-6">
                 <span class="font-cinzel text-champagne tracking-[.2em]">NT$ 4,800</span>
-                <a href="#membership" class="text-xs tracking-[.28em] text-gold hover:text-champagne transition">預約鑑賞</a>
+                <a href="https://calendar.app.google/gShiwCfxxUSw3mun7" target="_blank" rel="noopener noreferrer" class="text-xs tracking-[.28em] text-gold hover:text-champagne transition">預約鑑賞</a>
               </div>
             </div>
           </article>
@@ -201,7 +219,7 @@
               <p class="text-muted leading-loose text-sm tracking-wider mb-7">以溫熱能量搭配慢節奏按撫，適合壓力累積、睡眠品質不穩與循環疲乏的貴賓。</p>
               <div class="flex items-center justify-between border-t border-gold/15 pt-6">
                 <span class="font-cinzel text-champagne tracking-[.2em]">NT$ 6,200</span>
-                <a href="#membership" class="text-xs tracking-[.28em] text-gold hover:text-champagne transition">預約鑑賞</a>
+                <a href="https://calendar.app.google/gShiwCfxxUSw3mun7" target="_blank" rel="noopener noreferrer" class="text-xs tracking-[.28em] text-gold hover:text-champagne transition">預約鑑賞</a>
               </div>
             </div>
           </article>
@@ -281,7 +299,11 @@
           <i class="ph-thin ph-crown text-6xl text-gold mb-6 block"></i>
           <p class="font-cinzel text-gold text-xs tracking-[.55em] uppercase mb-5">VIP Membership</p>
           <h2 class="font-serif text-3xl md:text-5xl tracking-[.18em] text-white mb-5">私人會籍鑑賞</h2>
-          <p class="text-muted leading-loose tracking-wider text-sm">留下資料，禮賓秘書將為您安排專屬療程建議。</p>
+          <p class="text-muted leading-loose tracking-wider text-sm mb-8">透過線上預約表，直接選擇最適合您的日期與時段。</p>
+          <a href="https://calendar.app.google/gShiwCfxxUSw3mun7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 px-9 py-4 rounded-full bg-ruby text-champagne text-xs tracking-[.26em] hover:bg-[#A50000] transition shadow-glow">
+            <i class="ph ph-calendar-check text-xl"></i>
+            立即選擇預約時段
+          </a>
         </div>
 
         <form id="vipForm" class="relative z-10 grid sm:grid-cols-2 gap-5">
@@ -298,14 +320,14 @@
             </select>
             <i class="ph-thin ph-caret-down absolute right-5 top-1/2 -translate-y-1/2 text-gold text-xl pointer-events-none"></i>
           </div>
-          <button id="submitBtn" class="sm:col-span-2 mt-4 py-4 rounded-full bg-ruby text-champagne font-cinzel text-xs tracking-[.34em] hover:bg-[#A50000] transition shadow-glow">Submit Request</button>
+          <button id="submitBtn" class="sm:col-span-2 mt-4 py-4 rounded-full bg-ruby text-champagne font-cinzel text-xs tracking-[.34em] hover:bg-[#A50000] transition shadow-glow">前往線上預約</button>
         </form>
 
         <div id="successMsg" class="hidden absolute inset-0 bg-ink/95 backdrop-blur-xl z-20 items-center justify-center text-center p-8">
           <div>
             <i class="ph-thin ph-seal-check text-6xl text-gold mb-6 block"></i>
-            <h3 class="font-serif text-3xl text-white tracking-[.2em] mb-5">申請已送達</h3>
-            <p class="text-muted leading-loose tracking-wider mb-8">禮賓秘書將於 24 小時內與您聯繫，為您安排專屬沉澱時光。</p>
+            <h3 class="font-serif text-3xl text-white tracking-[.2em] mb-5">預約頁已開啟</h3>
+            <p class="text-muted leading-loose tracking-wider mb-8">請在 Google 預約頁選擇適合您的專屬時段。</p>
             <button onclick="resetForm()" class="text-gold text-xs tracking-[.3em] border-b border-gold/50 pb-2">RETURN</button>
           </div>
         </div>
@@ -317,6 +339,17 @@
       <p class="font-cinzel text-[11px] tracking-[.55em] text-muted uppercase mb-3">Precipitation SPA</p>
       <p class="text-[11px] tracking-widest text-muted/50">© 2026 PRECIPITATION SPA. ALL RIGHTS RESERVED.</p>
     </footer>
+
+    <a
+      href="https://calendar.app.google/gShiwCfxxUSw3mun7"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="開啟沉澱 SPA 線上預約表"
+      class="fixed right-5 bottom-5 sm:right-8 sm:bottom-8 z-50 inline-flex items-center gap-3 px-5 py-4 rounded-full bg-ruby text-champagne border border-champagne/20 shadow-[0_15px_50px_rgba(139,0,0,.45)] hover:bg-[#A50000] hover:-translate-y-1 transition"
+    >
+      <i class="ph ph-calendar-check text-xl"></i>
+      <span class="text-xs tracking-[.2em]">立即預約</span>
+    </a>
   </div>
 
   <script>
@@ -342,10 +375,11 @@
     form.addEventListener('submit', e => {
       e.preventDefault();
       submitBtn.textContent = 'PROCESSING...';
+      window.open('https://calendar.app.google/gShiwCfxxUSw3mun7', '_blank', 'noopener,noreferrer');
       setTimeout(() => {
         successMsg.classList.remove('hidden');
         successMsg.classList.add('flex');
-        submitBtn.textContent = 'Submit Request';
+        submitBtn.textContent = '前往線上預約';
       }, 900);
     });
     window.resetForm = () => {
