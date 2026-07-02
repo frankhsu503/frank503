@@ -411,11 +411,18 @@
               <input class="luxe-input" name="entry.1610329698" placeholder="可自由填寫或留白" />
             </label>
             <label class="block">
-              <span class="block text-[11px] tracking-[.24em] text-gold mb-2">期望日期</span>
-              <input id="contactDate" class="luxe-input" type="date" />
+              <span class="block text-[11px] tracking-[.24em] text-gold mb-2">期望日期 *</span>
+              <input id="contactDate" class="luxe-input" type="date" required />
               <input id="contactYear" type="hidden" name="entry.2036228442_year" />
               <input id="contactMonth" type="hidden" name="entry.2036228442_month" />
               <input id="contactDay" type="hidden" name="entry.2036228442_day" />
+              <input id="contactHour" type="hidden" name="entry.2036228442_hour" />
+              <input id="contactMinute" type="hidden" name="entry.2036228442_minute" />
+              <input id="contactAmPm" type="hidden" name="entry.2036228442_ampm" />
+            </label>
+            <label class="block">
+              <span class="block text-[11px] tracking-[.24em] text-gold mb-2">期望時間 *</span>
+              <input id="contactTime" class="luxe-input" type="time" required />
             </label>
             <label class="block sm:col-span-2">
               <span class="block text-[11px] tracking-[.24em] text-gold mb-2">偏好的 SPA 服務強度</span>
@@ -523,6 +530,7 @@
     const contactSuccessModal = document.getElementById('contactSuccessModal');
     const closeContactModal = document.getElementById('closeContactModal');
     const contactDate = document.getElementById('contactDate');
+    const contactTime = document.getElementById('contactTime');
     let contactFormSubmitted = false;
 
     const showContactSuccess = () => {
@@ -544,6 +552,12 @@
         document.getElementById('contactYear').value = year;
         document.getElementById('contactMonth').value = month;
         document.getElementById('contactDay').value = day;
+      }
+      if (contactTime.value) {
+        const [hour24, minute] = contactTime.value.split(':').map(Number);
+        document.getElementById('contactHour').value = hour24 % 12 || 12;
+        document.getElementById('contactMinute').value = String(minute).padStart(2, '0');
+        document.getElementById('contactAmPm').value = hour24 >= 12 ? 'PM' : 'AM';
       }
       contactFormSubmitted = true;
       contactSubmitBtn.disabled = true;
