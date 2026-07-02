@@ -362,6 +362,99 @@
       </div>
     </section>
 
+    <section id="contact" class="pb-28 px-5">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-[.78fr_1.22fr] gap-8 items-stretch">
+        <div class="relative overflow-hidden rounded-[2.5rem] border border-gold/20 bg-carbon p-8 sm:p-12 reveal">
+          <div class="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-gold/10 blur-3xl"></div>
+          <div class="relative z-10 flex flex-col h-full">
+            <p class="font-cinzel text-gold text-xs tracking-[.55em] uppercase mb-6">Private Inquiry</p>
+            <h2 class="font-serif text-3xl md:text-5xl tracking-[.14em] text-white leading-tight mb-7">聯絡我<br>合作洽詢</h2>
+            <div class="hairline mb-7"></div>
+            <p class="text-muted leading-loose tracking-wider text-sm">
+              無論是私人療程、企業尊榮方案或品牌合作，請留下您的需求。我們將以一對一方式與您聯繫，細緻安排合適的服務。
+            </p>
+            <div class="mt-auto pt-12 space-y-5 text-sm text-mist/75">
+              <div class="flex items-center gap-4">
+                <span class="w-11 h-11 rounded-full border border-gold/25 grid place-items-center"><i class="ph-thin ph-lock-key text-xl text-gold"></i></span>
+                <span class="tracking-[.16em]">資料僅用於專人聯繫</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="w-11 h-11 rounded-full border border-gold/25 grid place-items-center"><i class="ph-thin ph-clock text-xl text-gold"></i></span>
+                <span class="tracking-[.16em]">將於 24 小時內回覆</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass rounded-[2.5rem] p-7 sm:p-10 lg:p-12 relative overflow-hidden reveal">
+          <form
+            id="contactForm"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSeMOnJGgzX9WxmNvvvaoSZc1oFO8bgHhDMlGkm5h2-cOG_kTw/formResponse"
+            method="POST"
+            target="googleFormFrame"
+            class="grid sm:grid-cols-2 gap-5"
+          >
+            <label class="block">
+              <span class="block text-[11px] tracking-[.24em] text-gold mb-2">尊稱 *</span>
+              <input class="luxe-input" name="entry.588998168" required autocomplete="name" placeholder="您的姓名或尊稱" />
+            </label>
+            <label class="block">
+              <span class="block text-[11px] tracking-[.24em] text-gold mb-2">聯絡電話 *</span>
+              <input class="luxe-input" name="entry.476214014" type="tel" required autocomplete="tel" placeholder="09xx-xxx-xxx" />
+            </label>
+            <label class="block">
+              <span class="block text-[11px] tracking-[.24em] text-gold mb-2">性別</span>
+              <select class="luxe-input" name="entry.1610329698">
+                <option value="" selected>不指定</option>
+                <option value="男">男</option>
+                <option value="女">女</option>
+                <option value="其他">其他</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="block text-[11px] tracking-[.24em] text-gold mb-2">期望日期</span>
+              <input id="contactDate" class="luxe-input" type="date" />
+              <input id="contactYear" type="hidden" name="entry.2036228442_year" />
+              <input id="contactMonth" type="hidden" name="entry.2036228442_month" />
+              <input id="contactDay" type="hidden" name="entry.2036228442_day" />
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="block text-[11px] tracking-[.24em] text-gold mb-2">偏好的 SPA 服務強度</span>
+              <select class="luxe-input" name="entry.161112479">
+                <option value="" selected>請選擇偏好</option>
+                <option value="輕柔舒緩">輕柔舒緩</option>
+                <option value="適中放鬆">適中放鬆</option>
+                <option value="深層有感">深層有感</option>
+              </select>
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="block text-[11px] tracking-[.24em] text-gold mb-2">希望加強護理的部位</span>
+              <input class="luxe-input" name="entry.711262830" placeholder="例如：肩頸、腰背、腿部" />
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="block text-[11px] tracking-[.24em] text-gold mb-2">需求簡述 *</span>
+              <textarea class="luxe-input min-h-36 resize-y" name="entry.1646642689" required placeholder="請簡述療程需求、合作方向或方便聯絡的時段"></textarea>
+            </label>
+            <button id="contactSubmitBtn" type="submit" class="sm:col-span-2 mt-3 py-4 rounded-full bg-ruby text-champagne font-cinzel text-xs tracking-[.34em] hover:bg-[#A50000] disabled:opacity-60 disabled:cursor-wait transition shadow-glow">
+              SEND PRIVATE INQUIRY
+            </button>
+          </form>
+          <iframe id="googleFormFrame" name="googleFormFrame" title="Google 表單背景送出" class="hidden"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <div id="contactSuccessModal" class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/80 backdrop-blur-xl p-5" role="dialog" aria-modal="true" aria-labelledby="contactSuccessTitle">
+      <div class="relative w-full max-w-lg overflow-hidden rounded-[2.25rem] border border-gold/30 bg-ink p-9 sm:p-12 text-center shadow-[0_35px_120px_rgba(0,0,0,.75)]">
+        <div class="absolute inset-x-16 -top-24 h-48 rounded-full bg-gold/20 blur-3xl"></div>
+        <i class="ph-thin ph-seal-check relative text-7xl text-gold mb-7 block"></i>
+        <p class="font-cinzel text-[10px] tracking-[.5em] text-gold uppercase mb-4">Message Received</p>
+        <h3 id="contactSuccessTitle" class="font-serif text-2xl sm:text-3xl leading-relaxed tracking-[.12em] text-white mb-5">需求已送出，<br>我們將盡快與您聯絡！</h3>
+        <p class="text-sm leading-loose tracking-wider text-muted mb-8">感謝您的信任，沉澱 SPA 將由專人回覆。</p>
+        <button id="closeContactModal" type="button" class="px-9 py-3 rounded-full border border-gold/35 text-gold text-xs tracking-[.3em] hover:bg-gold/10 transition">CLOSE</button>
+      </div>
+    </div>
+
     <footer class="py-14 px-5 border-t border-gold/10 text-center">
       <i class="ph-thin ph-waves text-4xl text-gold/55 mb-5 block"></i>
       <p class="font-cinzel text-[11px] tracking-[.55em] text-muted uppercase mb-3">Precipitation SPA</p>
@@ -415,6 +508,58 @@
       successMsg.classList.add('hidden');
       successMsg.classList.remove('flex');
     };
+
+    const contactForm = document.getElementById('contactForm');
+    const googleFormFrame = document.getElementById('googleFormFrame');
+    const contactSubmitBtn = document.getElementById('contactSubmitBtn');
+    const contactSuccessModal = document.getElementById('contactSuccessModal');
+    const closeContactModal = document.getElementById('closeContactModal');
+    const contactDate = document.getElementById('contactDate');
+    let contactFormSubmitted = false;
+
+    const showContactSuccess = () => {
+      contactSuccessModal.classList.remove('hidden');
+      contactSuccessModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      closeContactModal.focus();
+    };
+
+    const hideContactSuccess = () => {
+      contactSuccessModal.classList.add('hidden');
+      contactSuccessModal.classList.remove('flex');
+      document.body.style.overflow = '';
+    };
+
+    contactForm.addEventListener('submit', () => {
+      if (contactDate.value) {
+        const [year, month, day] = contactDate.value.split('-');
+        document.getElementById('contactYear').value = year;
+        document.getElementById('contactMonth').value = month;
+        document.getElementById('contactDay').value = day;
+      }
+      contactFormSubmitted = true;
+      contactSubmitBtn.disabled = true;
+      contactSubmitBtn.textContent = 'SENDING...';
+    });
+
+    googleFormFrame.addEventListener('load', () => {
+      if (!contactFormSubmitted) return;
+      contactFormSubmitted = false;
+      contactSubmitBtn.disabled = false;
+      contactSubmitBtn.textContent = 'SEND PRIVATE INQUIRY';
+      contactForm.reset();
+      showContactSuccess();
+    });
+
+    closeContactModal.addEventListener('click', hideContactSuccess);
+    contactSuccessModal.addEventListener('click', event => {
+      if (event.target === contactSuccessModal) hideContactSuccess();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !contactSuccessModal.classList.contains('hidden')) {
+        hideContactSuccess();
+      }
+    });
 
     const canvas = document.getElementById('bg-canvas');
     const ctx = canvas.getContext('2d');
