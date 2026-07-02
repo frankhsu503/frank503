@@ -394,6 +394,10 @@
             target="googleFormFrame"
             class="grid sm:grid-cols-2 gap-5"
           >
+            <input type="hidden" name="fvv" value="1" />
+            <input type="hidden" name="pageHistory" value="0" />
+            <input type="hidden" name="entry.161112479_sentinel" value="" />
+            <input type="hidden" name="entry.711262830_sentinel" value="" />
             <label class="block">
               <span class="block text-[11px] tracking-[.24em] text-gold mb-2">尊稱 *</span>
               <input class="luxe-input" name="entry.588998168" required autocomplete="name" placeholder="您的姓名或尊稱" />
@@ -404,12 +408,7 @@
             </label>
             <label class="block">
               <span class="block text-[11px] tracking-[.24em] text-gold mb-2">性別</span>
-              <select class="luxe-input" name="entry.1610329698">
-                <option value="" selected>不指定</option>
-                <option value="男">男</option>
-                <option value="女">女</option>
-                <option value="其他">其他</option>
-              </select>
+              <input class="luxe-input" name="entry.1610329698" placeholder="可自由填寫或留白" />
             </label>
             <label class="block">
               <span class="block text-[11px] tracking-[.24em] text-gold mb-2">期望日期</span>
@@ -421,15 +420,24 @@
             <label class="block sm:col-span-2">
               <span class="block text-[11px] tracking-[.24em] text-gold mb-2">偏好的 SPA 服務強度</span>
               <select class="luxe-input" name="entry.161112479">
-                <option value="" selected>請選擇偏好</option>
-                <option value="輕柔舒緩">輕柔舒緩</option>
-                <option value="適中放鬆">適中放鬆</option>
-                <option value="深層有感">深層有感</option>
+                <option value="" selected>請選擇 1–5 級</option>
+                <option value="1">1｜輕柔放鬆</option>
+                <option value="2">2｜柔和舒緩</option>
+                <option value="3">3｜適中放鬆</option>
+                <option value="4">4｜較深層舒壓</option>
+                <option value="5">5｜深層舒壓</option>
               </select>
             </label>
             <label class="block sm:col-span-2">
               <span class="block text-[11px] tracking-[.24em] text-gold mb-2">希望加強護理的部位</span>
-              <input class="luxe-input" name="entry.711262830" placeholder="例如：肩頸、腰背、腿部" />
+              <select class="luxe-input" name="entry.711262830">
+                <option value="" selected>請選擇部位</option>
+                <option value="肩頸">肩頸</option>
+                <option value="背部">背部</option>
+                <option value="腿部">腿部</option>
+                <option value="手部">手部</option>
+                <option value="頭部">頭部</option>
+              </select>
             </label>
             <label class="block sm:col-span-2">
               <span class="block text-[11px] tracking-[.24em] text-gold mb-2">需求簡述 *</span>
