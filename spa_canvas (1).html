@@ -367,6 +367,16 @@
   </div>
 
   <script>
+    // 每次進入或返回頁面時，都從頂端開始。
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    window.addEventListener('pageshow', () => {
+      window.scrollTo(0, 0);
+      requestAnimationFrame(() => window.scrollTo(0, 0));
+    });
+
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('bg-ink/75', window.scrollY > 40);
